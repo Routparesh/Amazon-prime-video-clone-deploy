@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: amazon-prime
+  namespace: default
+  labels:
+    app: prime-app
+spec:
+  selector:
+    matchLabels:
+      app: prime-app
+  replicas: 2
+  template:
+    metadata:
+      name: amazon-prime
+      labels:
+        app: prime-app
+    spec:
+      containers:
+        - name: prime-container
+          image: routparesh/amazon-prime:replaceImageTag
+          ports:
+            - containerPort: 3000

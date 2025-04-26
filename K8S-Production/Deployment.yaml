@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: prime-app
+    app.kubernetes.io/instance: amazon-prime
+  name: amazon-prime
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: prime-app
+  template:
+    metadata:
+      labels:
+        app: prime-app
+      name: amazon-prime
+    spec:
+      containers:
+        - image: kanha05/amazon-prime:15
+          name: prime-container
+          ports:
+            - containerPort: 3000
