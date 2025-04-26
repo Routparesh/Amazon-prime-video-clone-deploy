@@ -17,7 +17,7 @@ spec:
         app: prime-app
     spec:
       containers:
-        - image: kanha05/amazon-prime:15
-          name: prime-container
+        - name: prime-container
+          image: routparesh/amazon-prime:16
           ports:
             - containerPort: 3000
