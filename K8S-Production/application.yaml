@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: amazon-prime
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: default
+  source:
+    repoURL: 'https://github.com/Routparesh/Amazon-prime-video-clone-deploy'
+    path: K8S-Production
+    targetRevision: HEAD
