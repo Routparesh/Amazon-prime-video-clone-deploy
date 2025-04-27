@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
         - name: prime-container
-          image: routparesh/amazon-prime:17
+          image: routparesh/amazon-prime:18
           ports:
             - containerPort: 3000
